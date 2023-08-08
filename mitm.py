@@ -29,12 +29,11 @@ qpos_regex = '^SR[0-9]{10}$'
 magicpos_regex = ''
 banner = "\n" \
          "///////////////////////////////////////\n" \
-         "░█▀█░█▀▄░▀█▀░▀█▀░▀█▀░█▀█░█▀▄░█▀█///////\n" \
-         "░█▀▀░█▀▄░░█░░░█░░░█░░█▀█░█░█░█░█///////\n" \
-         "░▀░░░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀░░▀▀▀///////\n" \
+         "░█▀█░█▀▄░▀█▀░▀█▀░▀█▀░█▀█░█░█///////////\n" \
+         "░█▀▀░█▀▄░░█░░░█░░░█░░█▀█░█░█///////////\n" \
+         "░▀░░░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀///////////\n" \
          "///////////////////////////////////////\n" \
          "A simple bluetooth mitm sniffer for spp"
-
 
 def regex_match(match):
     return re.match(qpos_regex, match)
@@ -238,7 +237,7 @@ if __name__ == "__main__":
         devices = bl.get_discoverable_devices()
         for device in devices:
             # if regex_match(device["name"]):
-            if (device["name"] == "SR2051041571"):
+            if (device["name"] == "SR1062682070"): #put whatever you want or just match with a regex
                 found = True
                 target_device = device
                 break
@@ -314,3 +313,4 @@ if __name__ == "__main__":
             logger.info("all done")
 
             break
+
